@@ -56,5 +56,5 @@ function 划分三角形(a, b, c, count) {
 
 function 渲染() {
   gl.clear(gl.COLOR_BUFFER_BIT);
-  gl.drawArrays(gl.TRAINGLES, 0, 点集.length);
+  gl.drawArrays(gl.TRIANGLES, 0, 点集.length);
 }
