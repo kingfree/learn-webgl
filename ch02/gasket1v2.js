@@ -31,7 +31,7 @@ window.onload = function 初始化() {
   gl.viewport(0, 0, 画布.clientWidth, 画布.clientHeight);
   gl.clearColor(1.0, 1.0, 1.0, 1.0);
 
-  let 程序 = initShaders(gl, 'vertex-shader', 'fragment-shader');
+  let 程序 = initShaders(gl, 'shaders/vshader21.glsl', 'shaders/fshader21.glsl');
   gl.useProgram(程序);
 
   let 缓冲 = gl.createBuffer();

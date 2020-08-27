@@ -7,14 +7,14 @@
       attribute vec4 vPosition;
 
       void main() {
-          gl_PointSize = 1.0;
-          gl_Position = vPosition;
+        gl_PointSize = 1.0;
+        gl_Position = vPosition;
       }
     </script>
     <script id="fragment-shader" type="x-shader/x-fragment">
       precision mediump float;
       void main() {
-          gl_FragColor = vec4(1.0, 0.0, 0.0, 1.0);
+        gl_FragColor = vec4(1.0, 0.0, 0.2, 1.0);
       }
     </script>
 
@@ -24,8 +24,6 @@
     <script type="text/javascript" src="gasket1.js"></script>
   </head>
   <body>
-    <canvas id="gl-canvas" width="512" height="512">
-      傻逼浏览器
-    </canvas>
+    <canvas id="gl-canvas" width="512" height="512"> 傻逼浏览器 </canvas>
   </body>
 </html>
