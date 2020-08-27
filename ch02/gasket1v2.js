@@ -5,7 +5,7 @@ let 点集;
 
 let 点数 = 5000;
 
-window.onload = function 初始化() {
+window.onload = async function 初始化() {
   let 画布 = document.getElementById('gl-canvas');
   gl = 画布.getContext('webgl');
   // gl = WebGLUtils.setupWebGL(画布);
@@ -31,7 +31,7 @@ window.onload = function 初始化() {
   gl.viewport(0, 0, 画布.clientWidth, 画布.clientHeight);
   gl.clearColor(1.0, 1.0, 1.0, 1.0);
 
-  let 程序 = initShaders(gl, 'shaders/vshader21.glsl', 'shaders/fshader21.glsl');
+  let 程序 = await initShaders(gl, 'shaders/vshader21.glsl', 'shaders/fshader21.glsl');
   gl.useProgram(程序);
 
   let 缓冲 = gl.createBuffer();

@@ -1,20 +1,28 @@
 // Get a file as a string using  AJAX
-function loadFileAJAX(name) {
-  var xhr = new XMLHttpRequest(),
-    okStatus = document.location.protocol === "file:" ? 0 : 200;
-  xhr.open('GET', name, false);
-  xhr.send(null);
-  return xhr.status == okStatus ? xhr.responseText : null;
+async function loadFileAJAX(name) {
+  return (await fetch(name)).text()
+  // var xhr = new XMLHttpRequest(),
+  //   okStatus = document.location.protocol === "file:" ? 0 : 200;
+  // xhr.open('GET', name, false);
+  // xhr.send(null);
+  // return xhr.status == okStatus ? xhr.responseText : null;
 };
 
 
-function initShaders(gl, vShaderName, fShaderName) {
-  function getShader(gl, shaderName, type) {
+async function initShaders(gl, vShaderName, fShaderName) {
+  async function getShader(gl, shaderName, type) {
     var shader = gl.createShader(type),
-      shaderScript = loadFileAJAX(shaderName);
+      shaderScript = await loadFileAJAX(shaderName);
     if (!shaderScript) {
       alert("Could not find shader source: " + shaderName);
     }
+    let h2 = document.createElement('h5')
+    h2.textContent = shaderName
+    document.body.appendChild(h2)
+    let pre = document.createElement('pre')
+    pre.textContent = shaderScript
+    document.body.appendChild(pre)
+
     gl.shaderSource(shader, shaderScript);
     gl.compileShader(shader);
 
@@ -24,8 +32,8 @@ function initShaders(gl, vShaderName, fShaderName) {
     }
     return shader;
   }
-  var vertexShader = getShader(gl, vShaderName, gl.VERTEX_SHADER),
-    fragmentShader = getShader(gl, fShaderName, gl.FRAGMENT_SHADER),
+  var vertexShader = await getShader(gl, vShaderName, gl.VERTEX_SHADER),
+    fragmentShader = await getShader(gl, fShaderName, gl.FRAGMENT_SHADER),
     program = gl.createProgram();
 
   gl.attachShader(program, vertexShader);
