@@ -4,7 +4,7 @@ let gl;
 let 点集 = [];
 let 色集 = [];
 
-let 划分层数 = 5;
+let 划分层数 = 4;
 
 window.onload = async function 初始化() {
   let 画布 = document.getElementById('gl-canvas');
