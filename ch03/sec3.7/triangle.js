@@ -56,7 +56,7 @@ window.onload = async function 初始化() {
 
 function render() {
   gl.clear(gl.COLOR_BUFFER_BIT);
-  gl.drawArrays(gl.POINTS, 0, 索引);
+  gl.drawArrays(gl.TRIANGLE_STRIP, 0, 索引);
 
   window.requestAnimationFrame(render);
 }
