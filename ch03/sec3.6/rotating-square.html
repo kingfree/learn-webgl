@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <title>旋转的方形 - 控制</title>
+
+    <script type="text/javascript" src="../../common/webgl-utils.js"></script>
+    <script type="text/javascript" src="../../common/initShaders2.js"></script>
+    <script type="text/javascript" src="../../common/MV.js"></script>
+    <script type="text/javascript" src="rotating-square.js"></script>
+  </head>
+  <body>
+    <div style="position: fixed; right: 0; top: 0">
+      <button id="btn-dir">改变方向</button>
+      <select size="3" id="sel-menu">
+        <option value="0">改变方向</option>
+        <option value="1">转快一点</option>
+        <option value="2">转慢一点</option>
+      </select>
+      <div>
+        <label>速度</label>
+        0%
+        <input type="range" min="0" max="100" step="10" value="50" id="ipt-spd" />
+        100%
+      </div>
+    </div>
+    <canvas id="gl-canvas" width="512" height="512"> 傻逼浏览器 </canvas>
+  </body>
+</html>
