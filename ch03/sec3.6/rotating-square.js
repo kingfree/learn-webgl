@@ -5,7 +5,7 @@ let 点集 = [];
 let 色集 = [];
 
 let theta = 0.0, thetaLoc;
-let speed = 100, direction = true;
+let speed = 128, direction = true;
 
 window.onload = async function 初始化() {
   let 画布 = document.getElementById('gl-canvas');
